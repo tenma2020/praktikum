@@ -7,7 +7,7 @@ public class Array1 {
         for (i = 2; i <= 8; i++) {
             bil[i] = 1 + (int)(Math.random() * 100);
         }
-        for (i = 0; i <= 10; i++) {
+        for (i = 0; i < 10; i++) {
             System.out.println(bil[i]);
         }
     }
