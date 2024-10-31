@@ -17,5 +17,4 @@ public class Array3 {
             System.out.print(c[i] + " ");
         }
     }
-
 }
