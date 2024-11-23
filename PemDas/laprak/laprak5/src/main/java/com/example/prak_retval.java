@@ -25,7 +25,7 @@ class prak_retval {
         System.out.println(showData(nim2, nama2, jur2));
     }
 
-    public String showData(String nim, String nama, String jurusan) {
+    public static String showData(String nim, String nama, String jurusan) {
         String show = "\nnim : \n" + nim + "\nnama : \n" + nama + "\nJurusan : \n" + jurusan;
         return show;
     }

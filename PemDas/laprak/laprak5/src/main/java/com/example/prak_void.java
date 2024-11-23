@@ -43,7 +43,7 @@ class prak_void {
 
     }
 
-    void volBalok() {
+    static void volBalok() {
         Scanner in = new Scanner(System.in);
         float panjang, lebar, tinggi, volume;
         System.out.print("Masukkan panjang balok : ");
