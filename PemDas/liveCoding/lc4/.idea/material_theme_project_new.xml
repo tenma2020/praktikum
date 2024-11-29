@@ -3,7 +3,13 @@
   <component name="MaterialThemeProjectNewConfig">
     <option name="metadata">
       <MTProjectMetadataState>
+<<<<<<< HEAD
+        <option name="migrated" value="true" />
+        <option name="pristineConfig" value="false" />
+        <option name="userId" value="-4571951d:1923e574eed:-7ffe" />
+=======
         <option name="userId" value="41ed8cfc:19328658d0b:-7fac" />
+>>>>>>> refs/remotes/origin/main
       </MTProjectMetadataState>
     </option>
   </component>
