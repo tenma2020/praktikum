@@ -36,7 +36,7 @@ public class Customer {
 
     public void addBorrowedBook(Book borrowBook){
         for(int i = 0; i < borrowedBooks.length; i++){
-            if(borrowedBooks[2] != null){
+            if(borrowedBooks[borrowedBooks.length] != null){
                 borrowedBooks[i] = borrowBook;
             }
         }

@@ -19,6 +19,8 @@ public class Scenario {
 
         admin1.addBook(new Book("", null, 0));
 
+        Library.showLibraryInfo();
+
 
 
        

@@ -34,7 +34,6 @@ public class Library {
     }
 
 
-
     public static void Borrow(String nameCustomer, String bookTitle) {        
         for(int i = 0; i < customerList.length; i++){
             if (nameCustomer == Customer.getName()) {
@@ -57,8 +56,14 @@ public class Library {
 
     }
 
-    public void showLibraryInfo() {
-
+    public static void showLibraryInfo() {
+        System.out.println("Nama pegawai: " + Employee.name);
+        
+        System.out.printf("%s %s %s %s %s", "No.", "|", "Title", "|", "Amount");
+        for(int i = 0; i < bookList.length; i++){
+            System.out.printf("%d %s %d %s %d %s %d", (i+1), "|", bookList[i].getTitle(), "|", bookList[i].getAuthor(), "|", bookList[i].getAmount());
+        }
+        
     }
 
 }

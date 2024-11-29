@@ -21,6 +21,6 @@ public class Main {
 
         Library.Borrow("Wawan", "Intro Java");
 
-
+        Library.showLibraryInfo();
     }
 }
