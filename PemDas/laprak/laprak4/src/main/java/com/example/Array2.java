@@ -9,7 +9,10 @@ public class Array2 {
         int coba[][] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 }, { 10, 11, 12 } };
         double[][] bank = new double[2][3];
         int i,j;
-        double nilaiRata2 = 0;
+        double nilaiRata2 = 0; 
+        double sum = 0;
+        double nilaiMax = 0;
+        double nilaiMin = 0;
         System.out.println(" i j coba[i][j]");
         for (i = 0; i < 4; i++) {
             for (j = 0; j < 3; j++) {
@@ -19,6 +22,12 @@ public class Array2 {
         for (i = 0; i <= 1; i++) {
             for (j = 0; j < 3; j++) {
                 bank[i][j] = i * 0.5 + j * 0.25;
+                sum += bank[i][j];
+                if(nilaiMax < bank[i][j])
+                    nilaiMax = bank[i][j];                
+                if(nilaiMin > bank[i][j])
+                    nilaiMin = bank[i][j];                
+
             }
         }
         for (i = 0; i <= 1; i++) {
@@ -26,5 +35,10 @@ public class Array2 {
                 System.out.print(bank[i][j] + " ");
             }
         }
+        System.out.println();
+        nilaiRata2 = sum/bank.length;        
+        System.out.println(nilaiRata2);
+        System.out.println(nilaiMax);
+        System.out.println(nilaiMin);
     }
 }
