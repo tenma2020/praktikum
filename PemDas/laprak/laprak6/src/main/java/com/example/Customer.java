@@ -3,7 +3,7 @@ package com.example;
 public class Customer {
     private static String name;
     private static String customerNumber;
-    static Book[] borrowedBooks = new Book[3];
+    private static Book[] borrowedBooks = new Book[3];
 
     public void setBorrowedBooks(Book[] borrowedBooks) {
         Customer.borrowedBooks = borrowedBooks;
@@ -17,7 +17,7 @@ public class Customer {
         Customer.name = name;
     }
 
-    public Book[] getBorrowedBooks() {
+    public static Book[] getBorrowedBooks() {
         return borrowedBooks;
     }
 

@@ -28,20 +28,20 @@ public class Employee {
 
     public void addCustomer(Customer customer){
         for(int i = 0; i < Library.getCustomerList().length; i++){
-            if(Library.customerList[i] == customer){
+            if(Library.getCustomerList()[i] == customer){
                 continue;
             }else{
-                Library.customerList[i] = customer;
+                Library.getCustomerList()[i] = customer;
             }
         }
     }
 
     public void addBook(Book book){
         for(int i = 0; i < Library.getBookList().length; i++){
-            if (Library.bookList[i] == book) {
-                Library.bookList[i].setAmount(+1);                
+            if (Library.getBookList()[i] == book) {
+                Library.getBookList()[i].setAmount(+book.getAmount());                
             }else{
-                Library.bookList[i] = book;
+                Library.getBookList()[i] = book;
             }
         }
     }
