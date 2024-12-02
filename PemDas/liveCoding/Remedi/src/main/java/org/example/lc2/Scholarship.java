@@ -1,4 +1,4 @@
-package org.example.Laprak2;
+package org.example.lc2;
 import java.util.*;
 
 public class Scholarship {

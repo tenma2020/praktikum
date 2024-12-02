@@ -35,21 +35,17 @@ public class Library {
 
     public static void Borrow(String nameCustomer, String bookTitle) {
         for (int i = 0; i < customerList.length; i++) {
-            if (nameCustomer == Customer.getName()) {
+            if (nameCustomer.equalsIgnoreCase(Customer.getName())) {
                 for (int j = 0; j < bookList.length; j++) {
-                    if (bookTitle == Book.getTitle()) {
+                    if (bookTitle.equalsIgnoreCase(Book.getTitle())) {
                         if (Customer.getBorrowedBooks()[i] != null && i < 3) {
                             Customer.getBorrowedBooks()[i].setTitle(bookTitle);
                         } else {
                             System.err.println("Jumlah peminjaman telah mencapai maksimal!");
                         }
-                    } else {
-
                     }
                 }
                 Customer.getBorrowedBooks()[i].setTitle(bookTitle);
-            } else {
-                continue;
             }
         }
 

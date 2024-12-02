@@ -6,7 +6,7 @@ public class Main {
         Library lib = new Library(librarEmployee);
 
         Book book1 = new Book("Intro Java", "Liang", 2);
-        Book book2 = new Book("Intro C++", "Daniel", 2);
+        Book book2 = new Book("Intro C++", "Stroustrup", 2);
 
         librarEmployee.addBook(new Book("Intro Python", "Guido", 3));
         librarEmployee.addBook(new Book("Intro Golang", "Google", 3));

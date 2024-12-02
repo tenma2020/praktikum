@@ -3,7 +3,6 @@ package com.example;
 public class Employee {
     protected static String name;
     protected static String id;
-    int currentIndex = 0;
 
     public void setId(String id) {
         Employee.id = id;
