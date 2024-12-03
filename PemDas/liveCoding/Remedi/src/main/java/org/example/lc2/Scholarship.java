@@ -72,8 +72,5 @@ public class Scholarship {
         } else if(p > 4 || p < 0){
             System.err.println("IPK Tidak Valid!");
         }
-
-
-
     }
 }

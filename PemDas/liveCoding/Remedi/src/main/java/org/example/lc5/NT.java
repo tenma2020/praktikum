@@ -1,7 +1,7 @@
 package org.example.lc5;
 import java.util.*;
 
-public class Maaf {
+public class NT {
     static double[] data;
     static double[] input(){
         Scanner in = new Scanner(System.in);

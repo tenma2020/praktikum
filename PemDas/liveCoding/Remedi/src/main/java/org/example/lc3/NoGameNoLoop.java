@@ -15,7 +15,7 @@ public class NoGameNoLoop {
         String move;
         do {
             for (int i = 0; i < platformSize; i++) {
-                if(i != position) {
+                if (i != position) {
                     System.out.print(".");
                 } else {
                     System.out.print("*");
@@ -23,20 +23,21 @@ public class NoGameNoLoop {
             }
             System.out.println();
             move = in.next();
-            if(move.equalsIgnoreCase("left")){
+            if (move.equals("left")) {
                 position--;
 
-            } else if(move.equalsIgnoreCase("right")){
+            } else if (move.equals("right")) {
                 position++;
             } else {
-                System.err.println("input error!");
+
+                System.out.println("input error!");
             }
-            if(position == coinPosition) {
+            if (position == coinPosition) {
                 coinGet = true;
             }
             if (position == finishPosition) {
                 System.out.println("Game finish!");
-                if(coinGet) {
+                if (coinGet) {
                     System.out.println("Koin didapatkan!");
                 }
             }
@@ -46,6 +47,5 @@ public class NoGameNoLoop {
                 position++;
             }
         } while (position != finishPosition);
-
     }
 }

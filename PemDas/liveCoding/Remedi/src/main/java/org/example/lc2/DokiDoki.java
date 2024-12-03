@@ -34,79 +34,79 @@ public class DokiDoki {
                         case "cd":
                             if (inputb2.endsWith(".chr")) {
                                 System.err.println("Error, bukan merupakan folder");
+                                System.exit(0);
+                            }
+                            break;
+                        case "cat":
+                            if (inputb2.equals(monika)) {
+                                System.out.println(monika.substring(0, monika.length() - 4) + "_ready");
+                                in.close();
+                            } else if (inputb2.equals(natsuki)) {
+                                System.out.println(natsuki.substring(0, natsuki.length() - 4) + "_ready");
+                                in.close();
+                            } else if (inputb2.equals(sayori)) {
+                                System.out.println(sayori.substring(0, sayori.length() - 4) + "_ready");
+                                in.close();
+                            } else if (inputb2.equals(yuri)) {
+                                System.out.println(yuri.substring(0, yuri.length() - 4) + "_ready");
                                 in.close();
                             }
-                        case "cat":
-
-                                if (inputb2.equals(monika)) {
-                                    System.out.println(monika.substring(0, monika.length() - 4) + "_ready");
-                                    in.close();
-                                } else if (inputb2.equals(natsuki)) {
-                                    System.out.println(natsuki.substring(0, natsuki.length() - 4) + "_ready");
-                                    in.close();
-                                } else if (inputb2.equals(sayori)) {
-                                    System.out.println(sayori.substring(0, sayori.length() - 4) + "_ready");
-                                    in.close();
-                                } else if (inputb2.equals(yuri)) {
-                                    System.out.println(yuri.substring(0, yuri.length() - 4) + "_ready");
-                                    in.close();
-                                }
+                            break;
                         case "rm":
-                                if (inputb2.equals(monika)) {
-                                    System.out.println(natsuki);
-                                    System.out.println(sayori);
-                                    System.out.println(yuri);
-                                    in.close();
-                                } else if (inputb2.equals(natsuki)) {
-                                    System.out.println(monika);
-                                    System.out.println(sayori);
-                                    System.out.println(yuri);
-                                    in.close();
-                                } else if (inputb2.equals(sayori)) {
-                                    System.out.println(monika);
-                                    System.out.println(natsuki);
-                                    System.out.println(yuri);
-                                    in.close();
-                                } else if (inputb2.equals(yuri)) {
-                                    System.out.println(monika);
-                                    System.out.println(natsuki);
-                                    System.out.println(sayori);
-                                    in.close();
-                                } else if (inputb2.equals(folder)) {
-                                System.err.println("Error, bukan merupakan file");
+                            if (inputb2.equals(monika)) {
+                                System.out.println(natsuki);
+                                System.out.println(sayori);
+                                System.out.println(yuri);
                                 in.close();
+                            } else if (inputb2.equals(natsuki)) {
+                                System.out.println(monika);
+                                System.out.println(sayori);
+                                System.out.println(yuri);
+                                in.close();
+                            } else if (inputb2.equals(sayori)) {
+                                System.out.println(monika);
+                                System.out.println(natsuki);
+                                System.out.println(yuri);
+                                in.close();
+                            } else if (inputb2.equals(yuri)) {
+                                System.out.println(monika);
+                                System.out.println(natsuki);
+                                System.out.println(sayori);
+                                in.close();
+                            } else if (inputb2.equals(folder)) {
+                                System.err.println("Error, bukan merupakan file");
+                                System.exit(0);
                             } else {
                                 System.err.println("Error, file tidak ditemukan");
-                                in.close();
+                                System.exit(0);
                             }
+                            break;
                         default:
                             System.err.println("Error, command tidak terdaftar");
+                            System.exit(0);
+                            break;
                     }
                 } else if (inputa2.endsWith(".chr")) {
                     System.err.println("Error, bukan merupakan folder");
-                    in.close();
+                    System.exit(0);
                 } else {
                     System.err.println("Error, folder tidak ditemukan");
-                    in.close();
+                    System.exit(0);
                 }
-            case "cat":
+                break;
+            case "cat", "rm":
                 if (inputa2.equals(folder)) {
                     System.err.println("Error, bukan merupakan file");
-                    in.close();
+                    System.exit(0);
                 } else {
                     System.err.println("Error, file tidak ditemukan");
-                    in.close();
+                    System.exit(0);
                 }
-            case "rm":
-                if (inputa2.equals(folder)) {
-                    System.err.println("Error, bukan merupakan file");
-                    in.close();
-                } else {
-                    System.err.println("Error, file tidak ditemukan");
-                    in.close();
-                }
+                break;
             default:
                 System.err.println("Error, command tidak terdaftar");
+                System.exit(0);
+                break;
         }
     }
 }

@@ -1,7 +1,8 @@
 package org.example.lc5;
+
 import java.util.Scanner;
 
-public class KaperkarNumber {
+public class KaprekarNumber {
     static int hitungDigit(int n) {
         int hitung = 0;
         while (n > 0) {
@@ -11,7 +12,7 @@ public class KaperkarNumber {
         return hitung;
     }
 
-    static boolean checkKarpekarNumber(int n) {
+    static boolean checkKaprekarNumber(int n) {
         if (n == 1)
             return true;
 
@@ -23,14 +24,18 @@ public class KaperkarNumber {
         return (kiri + kanan) == n;
     }
 
-    static void printKarpekarNumber(int[] numbers) {
-        int count = 0;
+    static void printKaprekarNumber(int[] numbers) {
+        for (int i : numbers) {
+            if (i < 0){
+                System.err.println("Program Error");
+                System.exit(0);
+            }
+        }
         for (int number : numbers) {
-            if (checkKarpekarNumber(number)) {
-                ++count;
-                System.out.printf("%d adalah bilangan Kaperkar ke-%d\n", number, count);
-            }else{
-                System.out.printf("%d bukan bilangan Kaperkar\n", number);
+            if (checkKaprekarNumber(number)) {
+                System.out.printf("%d adalah bilangan Kaprekar\n", number);
+            } else {
+                System.out.printf("%d bukan bilangan Kaprekar\n", number);
             }
         }
     }
@@ -45,9 +50,7 @@ public class KaperkarNumber {
         for (int i = 0; i < number; i++) {
             numbers[i] = input.nextInt();
         }
-
-        printKarpekarNumber(numbers);
-
+        printKaprekarNumber(numbers);
 
 
     }
