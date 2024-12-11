@@ -1,63 +1,51 @@
 package com.example;
 
-public class Library {
-    private static Pegawai employee;
-    protected static Pelanggan[] customerList = new Pelanggan[20];
-    protected static Book[] bookList = new Book[100];
+import java.util.Objects;
 
-    public static Book[] getBookList() {
-        return bookList;
+public class Perpustakaan {
+    private static Pegawai pegawai;
+    protected static Pelanggan[] listPelanggan = new Pelanggan[20];
+    protected static Buku[] listBuku = new Buku[100];
+    protected static int totalBuku = 0;
+
+    public static Buku[] getListBuku() {
+        return listBuku;
     }
 
-    public static Pegawai getEmployee() {
-        return employee;
+    public static Pelanggan[] getListPelanggan() {
+        return listPelanggan;
     }
 
-    public static Pelanggan[] getCustomerList() {
-        return customerList;
-    }
+    public static int getTotalBuku() {return totalBuku;}
 
-    public void setBookList(Book[] bookList) {
-        Library.bookList = bookList;
-    }
+    public static void setTotalBuku(int totalBuku) {Perpustakaan.totalBuku = totalBuku;}
 
-    public void setCustomerList(Pelanggan[] customerList) {
-        Library.customerList = customerList;
-    }
+    public Perpustakaan(Pegawai pegawai) {Perpustakaan.pegawai = pegawai;}
 
-    public void setEmployee(Pegawai employee) {
-        Library.employee = employee;
-    }
-
-    public Library(Pegawai employee) {
-
-    }
-
-    public static void Borrow(String nameCustomer, String bookTitle) {
-        for (int i = 0; i < customerList.length; i++) {
-            if (nameCustomer.equalsIgnoreCase(Pelanggan.getNama())) {
-                for (int j = 0; j < bookList.length; j++) {
-                    if (bookTitle.equalsIgnoreCase(Book.getTitle())) {
-                        if (Pelanggan.getListBukuPinjam()[i] != null && i < 3) {
-                            Pelanggan.getListBukuPinjam()[i].setTitle(bookTitle);
-                        } else {
-                            System.err.println("Jumlah peminjaman telah mencapai maksimal!");
-                        }
+    public static void pinjam(String namaPelanggan, String judulBuku) {
+        for (Buku buku : listBuku) {
+            if (Objects.equals(Buku.getJudul(), judulBuku) && buku.getJumlah() != 0) {
+                for (Pelanggan pelanggan : listPelanggan) {
+                    if (Objects.equals(Pelanggan.getNama(), namaPelanggan)) {
+                        pelanggan.tambahBuku(buku);
                     }
                 }
-                Pelanggan.getListBukuPinjam()[i].setTitle(bookTitle);
+            } else if (Objects.equals(Buku.getJudul(), judulBuku)) {
+                if (buku.getJumlah() == 0) {
+                    System.err.println("Buku sedang dipinjam atau habis");
+                }
             }
         }
 
     }
 
-    public static void showLibraryInfo() {
+    public static void tampilkanInfoPerpustakaan() {
         System.out.println("Nama pegawai: " + Pegawai.nama);
 
-        System.out.printf("%s %s %s %s %s", "No.", "|", "Title", "|", "Amount");
-        for (int i = 0; i < bookList.length; i++) {
-            System.out.printf("%d %s %d %s %d %s %d", (i + 1), "|", Book.getTitle(), "|", bookList[i].getAuthor(), "|",
-                    bookList[i].getAmount());
+        System.out.printf("%s %s %s %s %s\n", "No.", "|", "Title", "|", "Amount");
+        for (int i = 0; i < listBuku.length; i++) {
+            System.out.printf("%d %s %s %s %s %s %d\n", (i + 1), "|", listBuku[i].getJudul(), "|", listBuku[i].getPenulis(), "|",
+                    listBuku[i].getJumlah());
         }
 
     }

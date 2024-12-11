@@ -1,28 +1,39 @@
 package com.example;
 
 public class Scenario {
-    public static void main(String[] args) {        
-        Employee admin1 = new Employee("Cecilia", "23021201"); //admin
+    public static void main(String[] args) {
+        Pegawai pegawaiPerpus = new Pegawai("Ararya", "215150207111030");
+        Perpustakaan perpus = new Perpustakaan(pegawaiPerpus);
 
-        admin1.addCustomer(new Customer("Hayasaka", "99001110009")); // no.1
-        admin1.addCustomer(new Customer("Miyuki", "99001110008")); // no.2
-        admin1.addCustomer(new Customer("Kei", "9900111100077")); // no.3
+        Buku buku1 = new Buku("Tutorial Java", "Graita", 2);
+        Buku buku2 = new Buku("Tutorial Python", "Safir", 2);
+        pegawaiPerpus.tambahBuku(buku1);
+        pegawaiPerpus.tambahBuku(buku2);
 
-        admin1.addBook(new Book("Heavens", "Tiancan", 3)); //no.4
-        admin1.addBook(new Book("Kaguya-sama", "Akasaka", 3)); //no.5
-        admin1.addBook(new Book("Solo Leveling", "Chugong", 1)); //no.6
+        pegawaiPerpus.tambahBuku(new Buku("Tutorial Javascript", "Bagus", 2));
+        pegawaiPerpus.tambahBuku(new Buku("Tutorial Golang", "Budi", 2));
 
-        Library.Borrow("Hayasaka", "Overlord"); //no.7        
-        Library.Borrow("Miyuki", "Solo Leveling"); //no.8
-        Library.Borrow("Kei", "Solo Leveling"); //no.9
-        Library.Borrow("Hayasaka", "Kaguya-sama"); //no.10
+        Pelanggan pelanggan1 = new Pelanggan("Wildan", "1");
+        Pelanggan pelanggan2 = new Pelanggan("Machsun", "2");
+        pegawaiPerpus.tambahPelanggan(pelanggan1);
+        pegawaiPerpus.tambahPelanggan(pelanggan2);
 
-        admin1.addBook(new Book("Overlord", "Maruyama", 0)); //no.11
+        pegawaiPerpus.tambahPelanggan(new Pelanggan("Adin", "3"));
+        pegawaiPerpus.tambahPelanggan(new Pelanggan("Machsun", "4"));
 
-        Library.showLibraryInfo();
+        perpus.pinjam("Wildan", "Tutorial Java");
+        perpus.pinjam("Machsun", "Tutorial Java");
+        perpus.pinjam("Adin", "Tutorial Java");
+        perpus.pinjam("Adin", "Tutorial Python");
+        perpus.pinjam("Wildan", "Tutorial Golang");
+        perpus.pinjam("Wildan", "Tutorial Javascript");
+        perpus.pinjam("Wildan", "Tutorial Python");
+        perpus.pinjam("Cantika", "Tutorial Golang");
+        perpus.pinjam("Machsun", "Sastra Inggris");
+        perpus.pinjam("Adin", "Tutorial Python");
+        perpus.pinjam("Cantika", "Cara cepat belajar Python");
 
+        perpus.tampilkanInfoPerpustakaan();
 
-
-       
     }
 }

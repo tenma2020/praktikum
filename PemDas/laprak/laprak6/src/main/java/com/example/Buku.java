@@ -1,42 +1,38 @@
 package com.example;
 
-public class Book {
-    private static String title;
-    private String author;
-    private int amount;
+public class Buku {
+    private static String judul;
+    private static String penulis;
+    private static int jumlah;
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setJumlah(int jumlah) {
+        Buku.jumlah = jumlah;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public static void setJudul(String judul) {
+        Buku.judul = judul;
     }
 
-    public void setTitle(String title) {
-        Book.title = title;
+    public int getJumlah() {
+        return jumlah;
     }
 
-    public int getAmount() {
-        return amount;
+    public String getPenulis() {
+        return penulis;
     }
 
-    public String getAuthor() {
-        return author;
+    public static String getJudul() {
+        return judul;
     }
 
-    public static String getTitle() {
-        return title;
+    public Buku(String judul, String penulis, int jumlah) {
+        Buku.judul = judul;
+        Buku.penulis = penulis;
+        Buku.jumlah = jumlah;
     }
 
-    public Book(String title, String author, int amount){
-        Book.title = title;
-        this.author = author;
-        this.amount = amount;
-    }
-
-    public void showBookInfo(){
-        System.out.println("Title: " + title);
-        System.out.println("Author: " + author);
+    public void tampilkanInfo() {
+        System.out.println("Judul: " + judul);
+        System.out.println("Penulis: " + penulis);
     }
 }

@@ -6,10 +6,10 @@ public class DokiDoki {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String folder = "stand";
-        String monika = "monika.chr";
-        String natsuki = "natsuki.chr";
-        String sayori = "sayori.chr";
-        String yuri = "yuri.chr";
+        String m = "monika";
+        String n = "natsuki";
+        String s = "sayori";
+        String y = "yuri";
 
 
         String inputa1 = in.next();
@@ -24,10 +24,10 @@ public class DokiDoki {
         switch (inputa1) {
             case "cd":
                 if (inputa2.equals(folder)) {
-                    System.out.println(monika);
-                    System.out.println(natsuki);
-                    System.out.println(sayori);
-                    System.out.println(yuri);
+                    System.out.println(m);
+                    System.out.println(n);
+                    System.out.println(s);
+                    System.out.println(y);
                     System.out.println("---");
 
                     switch (inputb1) {
@@ -38,40 +38,40 @@ public class DokiDoki {
                             }
                             break;
                         case "cat":
-                            if (inputb2.equals(monika)) {
-                                System.out.println(monika.substring(0, monika.length() - 4) + "_ready");
+                            if (inputb2.equals(m + ".chr")) {
+                                System.out.println(m + "_ready");
                                 in.close();
-                            } else if (inputb2.equals(natsuki)) {
-                                System.out.println(natsuki.substring(0, natsuki.length() - 4) + "_ready");
+                            } else if (inputb2.equals(n + ".chr")) {
+                                System.out.println(n + "_ready");
                                 in.close();
-                            } else if (inputb2.equals(sayori)) {
-                                System.out.println(sayori.substring(0, sayori.length() - 4) + "_ready");
+                            } else if (inputb2.equals(s + ".chr")) {
+                                System.out.println(s + "_ready");
                                 in.close();
-                            } else if (inputb2.equals(yuri)) {
-                                System.out.println(yuri.substring(0, yuri.length() - 4) + "_ready");
+                            } else if (inputb2.equals(y + ".chr")) {
+                                System.out.println(y + "_ready");
                                 in.close();
                             }
                             break;
                         case "rm":
-                            if (inputb2.equals(monika)) {
-                                System.out.println(natsuki);
-                                System.out.println(sayori);
-                                System.out.println(yuri);
+                            if (inputb2.equals(m)) {
+                                System.out.println(n);
+                                System.out.println(s);
+                                System.out.println(y);
                                 in.close();
-                            } else if (inputb2.equals(natsuki)) {
-                                System.out.println(monika);
-                                System.out.println(sayori);
-                                System.out.println(yuri);
+                            } else if (inputb2.equals(n)) {
+                                System.out.println(m);
+                                System.out.println(s);
+                                System.out.println(y);
                                 in.close();
-                            } else if (inputb2.equals(sayori)) {
-                                System.out.println(monika);
-                                System.out.println(natsuki);
-                                System.out.println(yuri);
+                            } else if (inputb2.equals(s)) {
+                                System.out.println(m);
+                                System.out.println(n);
+                                System.out.println(y);
                                 in.close();
-                            } else if (inputb2.equals(yuri)) {
-                                System.out.println(monika);
-                                System.out.println(natsuki);
-                                System.out.println(sayori);
+                            } else if (inputb2.equals(y)) {
+                                System.out.println(m);
+                                System.out.println(n);
+                                System.out.println(s);
                                 in.close();
                             } else if (inputb2.equals(folder)) {
                                 System.err.println("Error, bukan merupakan file");
