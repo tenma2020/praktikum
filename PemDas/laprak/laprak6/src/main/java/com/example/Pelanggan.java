@@ -3,10 +3,10 @@ package com.example;
 public class Customer {
     private static String name;
     private static String customerNumber;
-    private static Book[] borrowedBooks = new Book[3];
+    private static Book[] borrowedList = new Book[3];
 
     public void setBorrowedBooks(Book[] borrowedBooks) {
-        Customer.borrowedBooks = borrowedBooks;
+        Customer.borrowedList = borrowedBooks;
     }
 
     public void setCustomerNumber(String customerNumber) {
@@ -17,8 +17,8 @@ public class Customer {
         Customer.name = name;
     }
 
-    public static Book[] getBorrowedBooks() {
-        return borrowedBooks;
+    public static Book[] getBorrowedList() {
+        return borrowedList;
     }
 
     public String getCustomerNumber() {
@@ -31,13 +31,13 @@ public class Customer {
 
     public Customer(String name, String customerNumber){
         Customer.name = name;
-        Customer.customerNumber = customerNumber;        
+        Customer.customerNumber = customerNumber;
     }    
 
     public void addBorrowedBook(Book borrowBook){
-        for(int i = 0; i < borrowedBooks.length; i++){
-            if(borrowedBooks[borrowedBooks.length-1] != null){
-                borrowedBooks[i] = borrowBook;
+        for(int i = 0; i < borrowedList.length; i++){
+            if(borrowedList[borrowedList.length-1] != null){
+                borrowedList[i] = borrowBook;
             }
         }
     }
